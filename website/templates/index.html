@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com -->
+  <title>Helping Hands</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      font: 400 15px Lato, sans-serif;
+      line-height: 1.8;
+      color: #818181;
+    }
+    h2 {
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #303030;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+    h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+    }
+    .jumbotron {
+      background-color: #CBC3E3;
+      color: #fff;
+      padding: 100px 25px;
+      font-family: Montserrat, sans-serif;
+    }
+    .container-fluid {
+      padding: 60px 50px;
+    }
+    .bg-grey {
+      background-color: #f6f6f6;
+    }
+    .logo-small {
+      color: #CBC3E3;
+      font-size: 50px;
+    }
+    .logo {
+      color: #CBC3E3;
+      font-size: 200px;
+    }
+    .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+    }
+    .thumbnail img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 10px;
+    }
+    .carousel-control.right, .carousel-control.left {
+      background-image: none;
+      color: #CBC3E3;
+    }
+    .carousel-indicators li {
+      border-color: #CBC3E3;
+    }
+    .carousel-indicators li.active {
+      background-color: #CBC3E3;
+    }
+    .item h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 400;
+      font-style: italic;
+      margin: 70px 0;
+    }
+    .item span {
+      font-style: normal;
+    }
+    .panel {
+      border: 1px solid #CBC3E3;
+      border-radius:0 !important;
+      transition: box-shadow 0.5s;
+    }
+    .panel:hover {
+      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+    }
+    .panel-footer .btn:hover {
+      border: 1px solid #CBC3E3;
+      background-color: #fff !important;
+      color: #CBC3E3;
+    }
+    .panel-heading {
+      color: #fff !important;
+      background-color: #CBC3E3 !important;
+      padding: 25px;
+      border-bottom: 1px solid transparent;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+    .panel-footer {
+      background-color: white !important;
+    }
+    .panel-footer h3 {
+      font-size: 32px;
+    }
+    .panel-footer h4 {
+      color: #aaa;
+      font-size: 14px;
+    }
+    .panel-footer .#CBC3E3 {
+      margin: 15px 0;
+      background-color: #CBC3E3;
+      color: #fff;
+    }
+    .navbar {
+      margin-bottom: 0;
+      background-color: #CBC3E3;
+      z-index: 9999;
+      border: 0;
+      font-size: 12px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 0;
+      font-family: Montserrat, sans-serif;
+    }
+    .navbar li a, .navbar .navbar-brand {
+      color: #fff !important;
+    }
+    .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: #CBC3E3 !important;
+      background-color: #fff !important;
+    }
+    .navbar-default .navbar-toggle {
+      border-color: transparent;
+      color: #fff !important;
+    }
+    footer .glyphicon {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #CBC3E3;
+    }
+    .slideanim {visibility:hidden;}
+    .slide {
+      animation-name: slide;
+      -webkit-animation-name: slide;
+      animation-duration: 1s;
+      -webkit-animation-duration: 1s;
+      visibility: visible;
+    }
+    @keyframes slide {
+      0% {
+        opacity: 0;
+        transform: translateY(70%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0%);
+      }
+    }
+    @-webkit-keyframes slide {
+      0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+      }
+      100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+      }
+    }
+    @media screen and (max-width: 768px) {
+      .col-sm-4 {
+        text-align: center;
+        margin: 25px 0;
+      }
+      .#CBC3E3-lg {
+        width: 100%;
+        margin-bottom: 35px;
+      }
+    }
+    @media screen and (max-width: 480px) {
+      .logo {
+        font-size: 150px;
+      }
+    }
+    </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#myPage">Helping Hands</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul style = "display: inline-block;" class="nav navbar-nav navbar-right">
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#services">SERVICES</a></li>
+        <li><a href="#portfolio">PORTFOLIO</a></li>
+        <li><a href="#privacypolicy">PRIVACY POLICY</a></li>
+        <li><a href="#termsofuse">TERMS OF USE</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron text-center">
+  <h1>Helping Hands</h1>
+  <p>Empower Your Community!</p>
+  <form>
+    <div style="margin: auto; width: 400px;" class="input-group">
+      <input type="email" class="form-control" size="50" placeholder="Search Opportunity" required>
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-danger">Search</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- Core theme CSS (includes Bootstrap)-->
+ <link rel="stylesheet" type= "text/css" href= "{{ url_for('static', filename='css/styles.css') }}?v=2 />
+ <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+ <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+ <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+ crossorigin="anonymous">
+
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+         crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+         crossorigin="anonymous"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+         crossorigin="anonymous"></script>
+</head>
+<body>
+ <!-- Masthead-->
+ <!-- <header class="masthead">
+     <div class="center">
+         <div class="row justify-content-center">
+             <div class="col-xl-6">
+                 <div class="text-center text-white">
+                     <!-- Signup form-->
+                     <!-- * * * * * * * * * * * * * * *-->
+                     <!-- * * SB Forms Contact Form * *-->
+                     <!-- * * * * * * * * * * * * * * *-->
+                     <!-- This form is pre-integrated with SB Forms.-->
+                     <!-- To make this form functional, sign up at-->
+                     <!-- https://startbootstrap.com/solution/contact-forms-->
+                     <!-- to get an API token!-->
+                     <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                         <!-- Submit success message-->
+                         <!---->
+                         <!-- This is what your users will see when the form-->
+                         <!-- has successfully submitted-->
+                         <div class="d-none" id="submitSuccessMessage">
+                             <div class="text-center mb-3">
+                                 <div class="fw-bolder">Form submission successful!</div>
+                                 <p>To activate this form, sign up at</p>
+                                 <a class="text-white" href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                             </div>
+                         </div>
+                         <!-- Submit error message-->
+                         <!---->
+                         <!-- This is what your users will see when there is-->
+                         <!-- an error submitting the form-->
+                         <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                     </form>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </header> -->
+
+ <!-- Navigation-->
+ <div class="text-center">
+     <form class="form-inline">
+         <a class="btn btn-primary btn-lg" href="/logout">Login</a>
+         <a class="btn btn-primary btn-lg" href="/sign-up">Sign Up</a>
+     </form>
+
+</div>
+
+
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h1>About</h1><br>
+      <h4>Here at Helping Hands, we aim to enable and promote community involvement by providing
+      easy access to a variety of volunteer opportunities and information to our users!
+      By matching your personal interests with relevant volunteer opportunities in your community,
+      gain valuable experience and help your neighbors!</h4>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-home logo"></span>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-globe logo slideanim"></span>
+    </div>
+    <div class="col-sm-8">
+      <h1>Inspiration</h1><br>
+      <h4>Whether you are new to community involvement and are not sure of where to start or are new
+        to a community, Helping Hands hopes to bridge the gap between willing community members and
+        volunteer event coordinators by providing a one-stop site for users.</h4>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Services Section) -->
+<div id="services" class="container-fluid text-center">
+  <h2>FEATURES</h2>
+  <h4>What We Offer</h4>
+  <br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-user logo-small"></span>
+      <h4>COMMUNITY</h4>
+      <h6>Get to know your neighbors and have a positive impact! Whether in your own community or another nearby, help make a difference!</h6>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-leaf logo-small"></span>
+      <h4>GREEN-FOCUS</h4>
+      <h6>Explore green opportunities within your own community! Find ways to increase reusability and promote sustainability!</h6>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-briefcase logo-small"></span>
+      <h4>POSITIVE EXPERIENCE</h4>
+      <h6>Gain experience in your desired field or area of expertise! From tutoring to community clean-ups, find your fit!</h6>
+    </div>
+  </div>
+  <br><br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-certificate logo-small"></span>
+      <h4>CERTIFIED USERS</h4>
+      <h6>A safe environment for volunteers and organizers! You have the choice to get involved or wait until you find your niche!</h6>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-phone logo-small"></span>
+      <h4>INSTANT UPDATES ON OPPORTUNITIES</h4>
+      <h6>Access new opportunities from wherever you are and find your favorite activity!</h6>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-wrench logo-small"></span>
+      <h4 style="color:#303030;">HARD WORK</h4>
+      <h6>Be proud of doing the hard work and making a difference! See your community from a new point of view!</h6>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Portfolio Section) -->
+<div id="portfolio" class="container-fluid text-center bg-grey">
+  <h2>Portfolio</h2><br>
+  <h3>Our Users' Work</h4>
+  <div class="row text-center slideanim">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <a href="https://lh3.googleusercontent.com/5XFwl15Bm9R5yb6QQoToYynkEuiZ652x4d1YUNgH9LrWIYuuf0cP9YQhADqE4D3jbwNxAMtLvE7AnNlHliVUE9taGuKzz2w_xbNUXtMfA2wi5B_9HqGFU9XBdFQ1C5RiB1IFs5ns7g=w2400?source=screenshot.guru"> <img src="https://lh3.googleusercontent.com/5XFwl15Bm9R5yb6QQoToYynkEuiZ652x4d1YUNgH9LrWIYuuf0cP9YQhADqE4D3jbwNxAMtLvE7AnNlHliVUE9taGuKzz2w_xbNUXtMfA2wi5B_9HqGFU9XBdFQ1C5RiB1IFs5ns7g=w600-h315-p-k" /> </a>
+        <p><strong>Foodbank Fun</strong></p>
+        <p>A group of Helping Hands users get involved at their local foodbank sort and package meals!</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <a href="https://lh3.googleusercontent.com/Bg3gfTBWtaq2QdIUjobtgwPO3Fj96ucp2flJtpkpmefAbm73QfTp6_2ZKIBoSwN0V8DIGotsVgKEjiSfgJZspF9E7VsdanWsCxBdtrIKRfQ0sH--Wv2p7CIde-9jz_dq2ayYEmI9MQ=w2400?source=screenshot.guru"> <img src="https://lh3.googleusercontent.com/Bg3gfTBWtaq2QdIUjobtgwPO3Fj96ucp2flJtpkpmefAbm73QfTp6_2ZKIBoSwN0V8DIGotsVgKEjiSfgJZspF9E7VsdanWsCxBdtrIKRfQ0sH--Wv2p7CIde-9jz_dq2ayYEmI9MQ=w600-h315-p-k" /> </a>
+        <p><strong>Annual Community Clean-Up</strong></p>
+        <p>Our volunteers and organizers met to clean up their parks of garbage this spring!</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <a href="https://lh3.googleusercontent.com/N2CGX2cpboj5vw9mw_1NDI7aE_nbtyjQK0h46HmmQfg7aVlKQPVTzXOkUWbMj7Xsj45v0v4UgH_cOJAkaiNqZ04EVjb5ciZtWO7AYdX_MlPTBLTyf4QKxs-mCEmaZoLTr34FBpOwoQ=w2400?source=screenshot.guru"> <img src="https://lh3.googleusercontent.com/N2CGX2cpboj5vw9mw_1NDI7aE_nbtyjQK0h46HmmQfg7aVlKQPVTzXOkUWbMj7Xsj45v0v4UgH_cOJAkaiNqZ04EVjb5ciZtWO7AYdX_MlPTBLTyf4QKxs-mCEmaZoLTr34FBpOwoQ=w579-h295-p-k" /> </a>
+        <p><strong>Jane Doe's Focus</strong></p>
+        <p>Jane Doe, a student in Veterinary Studies, got involved with her local animal shelter to gain experience in the field.</p>
+      </div>
+    </div>
+  </div><br>
+
+  <h2>What Our Users Say</h2>
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <h4>"Helping Hands was so helpful when connecting me my local animal shelter!"<br><span>Jane Doe, Volunteer</span></h4>
+      </div>
+      <div class="item">
+        <h4>"Finally I'm able to get enough volunteers for our annual community clean-up initiative!"<br><span>John Doe, Pittsburgh District #8</span></h4>
+      </div>
+      <div class="item">
+        <h4>"I'm so glad I was able to use my language skills for a good cause through Helping Hands!"<br><span>Jonathan Doe II, University of Pittsburgh</span></h4>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<!-- * *                               SB Forms JS                               * *-->
+<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+
+<!-- Container (Privacy Policy) -->
+<div id="PRIVACYPOLICY" class="container-fluid">
+  <div class="text-center">
+    <h2>Privacy Policy & Terms of Use</h2>
+    <li class="list-inline-item"><a href="http://127.0.0.1:5000/privacypolicy/">Privacy Policy</a></li>
+    <li class="list-inline-item"><a href="http://127.0.0.1:5000/termsofuse/">Terms of Use</a></li>
+  </div>
+</div>
+
+
+<!-- Container (Contact Section) -->
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center">CONTACT US!</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Contact us and we'll get back to you within 24 hours.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Pittsburgh, PA</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +1-xxx-xxx-xxxx</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> HelpingHands@gmail.com</p>
+    </div>
+    <div class="col-sm-7 slideanim">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Image of location/map -->
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+{% extends "base.html" %} {% block title %}Sign Up{% endblock %} {% block
+    content %}
+    <form method="POST">
+      <h3 align="center">Enter your interests</h3>
+      <div class="form-group">
+        <label for="interest_1">Interest 1</label>
+        <input
+          type="text"
+          class="form-control"
+          id="interest_1"
+          name="interest_1"
+        />
+      </div>
+      <div class="form-group">
+        <label for="interest_2">Interest 2</label>
+        <input
+          type="text"
+          class="form-control"
+          id="interest_2"
+          name="interest_2"
+        />
+      </div>
+      <div class="form-group">
+        <label for="interest_3">Interest 3</label>
+        <input
+          type="text"
+          class="form-control"
+          id="interest_3"
+          name="interest_3"
+        />
+      </div>
+      <div class="form-group">
+        <label for="interest_4">Interest 4</label>
+        <input
+          type="text"
+          class="form-control"
+          id="interest_4"
+          name="interest_4"
+        />
+      </div>
+      <div class="form-group">
+        <label for="interest_5">Interest 5</label>
+        <input
+          type="text"
+          class="form-control"
+          id="interest_5"
+          name="interest_5"
+        />
+      </div>
+      <br />
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    {% endblock %}
